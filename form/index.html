@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;600&display=swap"
+        rel="stylesheet">
+    <title>Form</title>
+    <meta name="description" content="hello">
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            document.querySelector(".menu-icon").addEventListener("click", () => {
+                document.querySelector(".main-menu").classList.toggle("menu-show");
+            });
+        });
+    </script>
+</head>
+
+<body class="body">
+    <header class="main-menu">
+        <div class="menu-icon">
+            <svg viewbox="0 0 60 60">
+                <line x1="5px" y1="30px" x2="55px" y2="30px" />
+                <line x1="5px" y1="30px" x2="55px" y2="30px" />
+                <line x1="15px" y1="30px" x2="45px" y2="30px" />
+                <line x1="15px" y1="30px" x2="45px" y2="30px" />
+                <line x1="5px" y1="30px" x2="55px" y2="30px" />
+            </svg>
+        </div>
+        <nav>
+            <h2 class="hidden">Main Menu</h2>
+            <ul>
+                <li class="grow"><a href="../">MoCo</a></li>
+                <li class="grow"><a href="../">Home</a></li>
+                <li class="grow"><a href="../about/">About</a></li>
+                <li><a class="dead-link">Form</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article class="panel form-panel">
+            <div class="text-wrap no-padding">
+                <h1>Moco Photography</h1>
+                <form>
+                    <label for="name">Full name:</label>
+                    <input type="text" name="Name" id="name">
+
+                    <label for="email">Email address:</label>
+                    <input type="email" name="Email" id="email" required>
+
+                    <fieldset>
+                        <legend>Which of the following is most intriguing to you? (Check all that
+                            apply)
+                        </legend>
+
+                        <input type="checkbox" id="Wedding" name="Attributes" value="advertise">
+                        <label for="advertise">Wedding pics</label>
+
+                        <input type="checkbox" id="Portrait" name="Attributes" value="proselyte">
+                        <label for="proselyte">Portrait pics</label>
+
+                        <input type="checkbox" id="Social" name="Attributes" value="volunteer">
+                        <label for="volunteer">Instagram pics</label>
+
+                        <input type="checkbox" id="Family" name="Attributes" value="rally">
+                        <label for="rally">Family pics</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>How much are you willing to pay for a professional photographer?</legend>
+
+                        <input type="radio" name="Money" id="hundred" value="$100">
+                        <label for="hundred">$100.00</label>
+
+                        <input type="radio" name="Money" id="two-hundred-fifty" value="$250.00">
+                        <label for="thousand">$250.00</label>
+
+                        <input type="radio" name="Money" id="five-hundred" value="$500.00">
+                        <label for="million">$500.00</label>
+                    </fieldset>
+
+                    <div class="center-on-mobile">
+                        <button type="submit" class="button">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="image-wrap clothing.svg">
+                <img src="../images/clothing.svg" alt="clothing">
+            </div>
+            <div>
+                <div class="loading hidden">
+                    <span class="loader"><span class="loader-inner"></span></span>
+                </div>
+                <p class="success-message hidden">Thank you!</p>
+            </div>
+        </article>
+    </main>
+</body>
+
+</html>

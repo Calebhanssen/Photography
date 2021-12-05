@@ -2,6 +2,7 @@
   --text-color: #333;
   --floral-white: #f5f1e8;
   --roman-back: #333;
+  --checkbox-size: 20px;
 
   /* added this because it was referenced in hero overlay but didn't exist... */
   --overlay-background-color: rgba(0, 0, 0, 0.3);
@@ -367,6 +368,126 @@ picture img {
   border: #30aed6 solid 3px;
 }
 
+/* form */
+form {
+  padding: 2rem;
+  background-color: #dbd8c8;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.form-panel .image-wrap {
+  order: 0;
+  flex: 0%;
+  justify-content: center;
+}
+
+.form-panel {
+  align-items: center;
+}
+
+.form-panel .text-wrap {
+  flex: 70%;
+}
+
+input {
+  color: black;
+  border: none;
+}
+
+textarea {
+  color: var(--scorpion);
+  border: none;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  width: var(--checkbox-size);
+  height: var(--checkbox-size);
+  border: 2px solid var(--wild-sand);
+  border-radius: 6px;
+
+  transition: background-color 300ms, border-color 300ms, box-shadow 300ms;
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+}
+
+input[type="checkbox"]:hover,
+input[type="checkbox"]:focus,
+input[type="radio"]:hover,
+input[type="radio"]:focus {
+  outline: none;
+}
+
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+  border-color: var(--wild-sand);
+}
+
+input[type="checkbox"]:checked:hover,
+input[type="checkbox"]:checked:focus {
+  border: 2px solid #333;
+  box-shadow: 0 0 3px #333;
+  outline: black;
+}
+
+input[type="checkbox"]:checked {
+  background-color: rgb(255, 255, 255);
+}
+
+input[type="checkbox"]:checked::after,
+input[type="radio"]::after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+input[type="checkbox"]:checked::after {
+  top: 1px;
+  right: 7px;
+  width: calc(var(--checkbox-size) / 4);
+  height: calc(var(--checkbox-size) / 2);
+  border-right: 3px solid black;
+  border-bottom: 3px solid black;
+  transform: rotate(38deg);
+}
+
+input[type="radio"]::after {
+  top: 2px;
+  left: 2px;
+  width: calc(var(--checkbox-size) - 4px);
+  height: calc(var(--checkbox-size) - 4px);
+  background-color: #333;
+  border-radius: 50%;
+
+  transform: scale(0);
+  transition: transform 300ms;
+}
+
+input[type="radio"]:checked::after {
+  transform: scale(1);
+}
+
+fieldset {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-gap: 1rem;
+}
+
+button {
+  margin-top: 1rem;
+  max-width: 8rem;
+  align-self: center;
+}
+
+/* end form */
+
 /* Icons ---------------------------------- */
 #name {
   background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
@@ -472,19 +593,13 @@ textarea:focus {
   }
 }
 
-@media (min-width: 501px) {
-  /* don't need to redefine this - it was set above */
-  /* .cards .overlay {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.227), rgba(0, 0, 0, 0.5));
-  } */
-}
-
 /* this was in the middle of your CSS above. Moved it here. it was messing with overrides */
 @media (min-width: 501px) {
   main {
     margin: 0 1.5rem;
   }
 
+  /* background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)); */
   .main-menu {
     order: 0;
   }
@@ -552,14 +667,14 @@ textarea:focus {
   }
 
   /* I increased the font size see not below on p. You can adjust to sizes you'd 
-     prefer.  */
+  prefer.  */
   .panel h2 {
     margin: 0;
     font-size: 2.5rem;
   }
 
   /* because I wanted to focus on the images, I increased the font size to 
-     reduce whitespace in the .text-wrapper */
+  reduce whitespace in the .text-wrapper */
   .panel p {
     font-size: 1.5rem;
   }
@@ -574,14 +689,14 @@ textarea:focus {
   }
 
   /* set an aspect ratio on the image-wrapper so it has the 
-     same aspect ratio of the images */
+  same aspect ratio of the images */
   .panel .image-wrapper {
     flex: 1 0 50%;
     aspect-ratio: 6 / 9;
   }
 
   /* have the image fill the image-wrapper. you don't need object-fit 
-     because the .image-wrapper has the same aspect ratio as the image */
+  because the .image-wrapper has the same aspect ratio as the image */
   .panel img {
     width: 100%;
     height: 100%;
@@ -605,16 +720,16 @@ textarea:focus {
     flex-wrap: nowrap;
   }
   /**************************************************************
-    this will make your hero image full screen on laptop. You can 
-    adjust the vh if you don't want it full screen
-    **************************************************************/
+  this will make your hero image full screen on laptop. You can 
+  adjust the vh if you don't want it full screen
+  **************************************************************/
   .hero {
     /* this subtracts the height of the menu (1rem padding top and bottom and
-       1rem font size from the vertical height of the
-       viewport. it's not 100% exact because it doesn't include line spacing, but 
-       it is good enough. Another option would be make the header on this 
-       page position: absolute, with top,left, and right set to 0 and a z-index of
-       1 -- but it will cover some of the top of the image */
+    1rem font size from the vertical height of the
+    viewport. it's not 100% exact because it doesn't include line spacing, but 
+    it is good enough. Another option would be make the header on this 
+    page position: absolute, with top,left, and right set to 0 and a z-index of
+    1 -- but it will cover some of the top of the image */
     height: calc(100vh - 3rem);
     height: calc(80vh - 3rem);
   }
@@ -626,7 +741,7 @@ textarea:focus {
   }
 
   /* I thought the main needed a bit more with on laptop, so I gave the 
-     body on your main index.html a class .main-page */
+  body on your main index.html a class .main-page */
 
   .main-page main {
     max-width: 60rem;
