@@ -402,12 +402,11 @@ textarea {
 
 input[type="checkbox"],
 input[type="radio"] {
-  appearance: none;
   -webkit-appearance: none;
   position: relative;
   width: var(--checkbox-size);
   height: var(--checkbox-size);
-  border: 2px solid var(--wild-sand);
+  border: 2px solid #fff;
   border-radius: 6px;
 
   transition: background-color 300ms, border-color 300ms, box-shadow 300ms;
