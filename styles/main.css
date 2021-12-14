@@ -560,6 +560,134 @@ i {
 }
 
 /* form */
+
+.one {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.one .two {
+  list-style: none;
+  margin: 0 5px;
+}
+
+.one .two a .fa {
+  font-size: 40px;
+  color: #262626;
+  line-height: 80px;
+  transition: 0.5s;
+  padding-right: 14px;
+}
+
+.one .two a span {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 30px;
+  color: #262626;
+  letter-spacing: 4px;
+  transition: 0.5s;
+}
+
+.one .two a {
+  text-decoration: none;
+  display: absolute;
+  display: block;
+  width: 210px;
+  height: 80px;
+  background: #fff;
+  text-align: left;
+  padding-left: 20px;
+  transform: rotate(-30deg) skew(25deg) translate(0, 0);
+  transition: 0.5s;
+  box-shadow: -20px 20px 10px rgba(0, 0, 0, 0.5);
+}
+.one .two a:before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: -20px;
+  height: 100%;
+  width: 20px;
+  background: #b1b1b1;
+  transform: 0.5s;
+  transform: rotate(0deg) skewY(-45deg);
+}
+.one .two a:after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: -10px;
+  height: 20px;
+  width: 100%;
+  background: #b1b1b1;
+  transform: 0.5s;
+  transform: rotate(0deg) skewX(-45deg);
+}
+
+.one .two a:hover {
+  transform: rotate(-30deg) skew(25deg) translate(20px, -15px);
+  box-shadow: -50px 50px 50px rgba(0, 0, 0, 0.5);
+}
+
+.one .two:hover .fa {
+  color: #fff;
+}
+
+/* ul li:hover span {
+  color: #fff;
+} */
+
+.one .two:hover:nth-child(1) a {
+  background: #3b5998;
+}
+.one .two:hover:nth-child(1) a:before {
+  background: #365492;
+}
+.one .two:hover:nth-child(1) a:after {
+  background: #4a69ad;
+}
+
+.one .two:hover:nth-child(2) a {
+  background: #00aced;
+}
+.one .two:hover:nth-child(2) a:before {
+  background: #097aa5;
+}
+.one .two:hover:nth-child(2) a:after {
+  background: #53b9e0;
+}
+
+.one .two:hover:nth-child(3) a {
+  background: #dd4b39;
+}
+.one .two:hover:nth-child(3) a:before {
+  background: #b33a2b;
+}
+.one .two:hover:nth-child(3) a:after {
+  background: #e66a5a;
+}
+
+.one .two:hover:nth-child(4) a {
+  background: #e4405f;
+}
+.one .two:hover:nth-child(4) a:before {
+  background: #d81c3f;
+}
+.one .two:hover:nth-child(4) a:after {
+  background: #e46880;
+}
+
+.one {
+  position: relative;
+  top: 8rem;
+}
+
 form {
   padding: 2rem;
   background-color: #dbd8c8;
