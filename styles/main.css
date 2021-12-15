@@ -375,10 +375,6 @@ picture img {
   transform: translate(-50%, -50%);
 }
 
-h3 {
-  text-align: center;
-}
-
 .radio-wrapper {
   width: 145px;
   height: 50px;
@@ -562,13 +558,15 @@ i {
 /* form */
 
 .one {
-  position: relative;
-  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
   margin: 0;
   padding: 0;
+  justify-content: space-around;
+  flex-direction: column;
+  margin-left: 2rem;
+  margin-top: 3rem;
 }
 
 .one .two {
@@ -715,7 +713,6 @@ input {
 }
 
 textarea {
-  color: var(--scorpion);
   border: none;
 }
 
@@ -792,7 +789,7 @@ input[type="radio"]:checked::after {
 }
 
 fieldset {
-  margin-top: 1rem;
+  margin-top: 2rem;
   display: grid;
   grid-template-columns: min-content 1fr;
   grid-gap: 1rem;
@@ -979,6 +976,9 @@ textarea:focus {
   .cards .overlay {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
   }
+  .one {
+    flex-direction: row;
+  }
 }
 
 @media (min-width: 700px) {
@@ -1033,6 +1033,10 @@ textarea:focus {
 
   .cards .card {
     flex: 1 1 35%;
+  }
+
+  .one {
+    flex-direction: row;
   }
 }
 
