@@ -410,9 +410,9 @@ picture img {
   z-index: 9;
 }
 
-input[type="radio"] {
+/* input[type="radio"] {
   display: none;
-}
+} */
 
 i {
   z-index: 99;
